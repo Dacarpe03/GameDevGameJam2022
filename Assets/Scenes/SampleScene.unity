@@ -370,5 +370,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickaxe: {fileID: 6853615746815966272, guid: 91328948dcc9cb9498ba4afa48d667f3, type: 3}
-  xSpawnOffset: 1
+  xSpawnOffset: 1.25
   ySpawnOffset: 1.5
