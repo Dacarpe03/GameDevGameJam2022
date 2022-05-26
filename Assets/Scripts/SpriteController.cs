@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteController : MonoBehaviour
 {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] Sprite[] possibleSprites;
-    private bool x_Flipped = false;
+    private bool xFlipped = false;
 
     // Update is called once per frame
     void Start(){
@@ -16,12 +14,12 @@ public class SpriteController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) && !x_Flipped){
-            x_Flipped = true;
-            spriteRenderer.flipX = x_Flipped;
+        if (Input.GetKeyDown(KeyCode.A) && !xFlipped){
+            xFlipped = true;
+            spriteRenderer.flipX = xFlipped;
         }else if(Input.GetKeyDown(KeyCode.D)){
-            x_Flipped = false;
-            spriteRenderer.flipX = x_Flipped;
+            xFlipped = false;
+            spriteRenderer.flipX = xFlipped;
         }
     }
 }
