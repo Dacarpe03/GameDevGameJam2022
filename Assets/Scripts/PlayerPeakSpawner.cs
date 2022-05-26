@@ -24,17 +24,24 @@ public class PlayerPeakSpawner : MonoBehaviour
 
     private void SpawnPickaxe(){
         Vector3 spawnPosition = transform.position + new Vector3(xMultiplier*xSpawnOffset, yMultiplier*ySpawnOffset, 0f);
-        Instantiate(pickaxe, spawnPosition, Quaternion.identity);
+        float yRotation = 0;
+        if (yMultiplier == -1){
+            yRotation = 180;
+        }else if (yMultiplier == 1){
+            yRotation = 0;
+        }
+        Quaternion spawnRotation = Quaternion.Euler(0, 0, -xMultiplier*90 + yRotation);
+        Instantiate(pickaxe, spawnPosition, spawnRotation);
     }
 
     private void UpdateSpawningoffsets(){
         if (Input.GetKeyDown(KeyCode.A)){
-            xMultiplier = 1;
+            xMultiplier = -1;
             yMultiplier = 0; 
         }
 
         if (Input.GetKeyDown(KeyCode.D)){
-            xMultiplier = -1;
+            xMultiplier = 1;
             yMultiplier = 0; 
         }
 
