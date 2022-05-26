@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerMovementScript : MonoBehaviour
 {
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float boostMultiplier = 1.5f;
+
     void Update()
     {
         int xDirection = CheckHztalDirection();
@@ -12,11 +14,13 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
     private void MovePlayer(){
+        float currentMultiplier = CheckBoostPressed();
+
         int xDirection = CheckHztalDirection();
-        float xSpeed = Time.deltaTime * xDirection * speed;
+        float xSpeed = Time.deltaTime * xDirection * speed * currentMultiplier;
 
         int yDirection = CheckVtcalDirection();
-        float ySpeed = Time.deltaTime * yDirection * speed;
+        float ySpeed = Time.deltaTime * yDirection * speed * currentMultiplier;
 
         Vector3 offset = new Vector3(xSpeed, ySpeed, 0);
         transform.Translate(offset);
@@ -38,6 +42,13 @@ public class PlayerMovementScript : MonoBehaviour
             return 1;
         }
         return 0;
+    }
+
+    private float CheckBoostPressed(){
+        if (Input.GetKey("space")){
+            return boostMultiplier;
+        }
+        return 1f;
     }
 
 }
