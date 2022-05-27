@@ -905,7 +905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050885549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.57, y: 13.47, z: 0}
+  m_LocalPosition: {x: -0.806, y: 13.519, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -951,8 +951,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f03f8e2daf6c84095ce881a59b3054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aliveTime: 1
   fallenRock: {fileID: 5726687153459754914, guid: ad1a2cb6e35bc254e9513067088c157e, type: 3}
-  xOffset: 0.7
+  xOffset: 0.9
   yOffset: 0
 --- !u!1 &1260046495
 GameObject:
@@ -55935,7 +55936,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1

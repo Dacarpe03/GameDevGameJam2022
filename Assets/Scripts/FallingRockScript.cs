@@ -41,7 +41,7 @@ public class FallingRockScript : MonoBehaviour
         spawnPosition.x += xOffset;
         spawnPosition.y += yOffset;
         Instantiate(fallenRock, spawnPosition, Quaternion.identity);
-        Destroy(this.gameObject);
+        shake = false;
     }
 
 }
