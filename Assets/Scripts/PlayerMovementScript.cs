@@ -52,4 +52,12 @@ public class PlayerMovementScript : MonoBehaviour
         return 1f;
     }
 
+     private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "FallingRock"){
+            other.gameObject.GetComponent<FallingRockScript>().Activate();
+        }else if (other.tag == "FallenRock"){
+            Destroy(this.gameObject);
+        }
+    }
+
 }
