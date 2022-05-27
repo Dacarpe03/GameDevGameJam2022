@@ -905,7 +905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050885549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.55, y: 2.68, z: 0}
+  m_LocalPosition: {x: -0.57, y: 13.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -926,7 +926,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallenRock: {fileID: 5726687153459754914, guid: ad1a2cb6e35bc254e9513067088c157e, type: 3}
-  xOffset: 0.1
+  xOffset: 0.7
   yOffset: 0
 --- !u!1 &1260046495
 GameObject:
@@ -56045,8 +56045,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickaxe: {fileID: 6853615746815966272, guid: 91328948dcc9cb9498ba4afa48d667f3, type: 3}
-  xSpawnOffset: 1.25
-  ySpawnOffset: 1.5
+  xSpawnOffset: 0.75
+  ySpawnOffset: 1
 --- !u!50 &1930080652
 Rigidbody2D:
   serializedVersion: 4
