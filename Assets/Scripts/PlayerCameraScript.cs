@@ -14,11 +14,15 @@ public class PlayerCameraScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A)){
             playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = normalPosition + offset;
+            playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = normalPosition;
         } else if (Input.GetKey(KeyCode.D)){
             playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = normalPosition - offset;
+            playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = normalPosition;
         } else if (Input.GetKey(KeyCode.W)){
+            playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = normalPosition;
             playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = normalPosition + offset;
         } else if (Input.GetKey(KeyCode.S)){
+            playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = normalPosition;
             playerCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = normalPosition - offset;
         }
     }
