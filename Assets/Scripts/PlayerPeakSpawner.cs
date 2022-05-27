@@ -35,23 +35,23 @@ public class PlayerPeakSpawner : MonoBehaviour
     }
 
     private void UpdateSpawningoffsets(){
-        if (Input.GetKeyDown(KeyCode.A)){
+        if (Input.GetKey(KeyCode.A)){
             xMultiplier = -1;
             yMultiplier = 0; 
         }
 
-        if (Input.GetKeyDown(KeyCode.D)){
+        if (Input.GetKey(KeyCode.D)){
             xMultiplier = 1;
             yMultiplier = 0; 
         }
 
         
-        if (Input.GetKeyDown(KeyCode.W)){
+        if (Input.GetKey(KeyCode.W)){
             xMultiplier = 0;
             yMultiplier = 1; 
         }
         
-        if (Input.GetKeyDown(KeyCode.S)){
+        if (Input.GetKey(KeyCode.S)){
             xMultiplier = 0;
             yMultiplier = -1; 
         }

@@ -8,7 +8,7 @@ public class FallingRockScript : MonoBehaviour
     private float amount = 1.5f;
     private float nextTime;
     private float time = 0.05f;
-    private float aliveTime = 2f;
+    private float aliveTime = 1f;
     private float destroyTime;
 
     [SerializeField] GameObject fallenRock;
