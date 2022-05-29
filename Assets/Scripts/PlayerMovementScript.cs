@@ -67,9 +67,10 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
-    private void Die(){
+    public void Die(){
         Instantiate(deadPlayer, this.transform.position, Quaternion.identity);
         this.gameObject.GetComponent<SpriteController>().ChangeSprite();
+        this.gameObject.GetComponent<PlayerTimerScript>().RestartTime();
         rb.position = startPosition;
     }
 
