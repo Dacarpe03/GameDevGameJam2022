@@ -207,3 +207,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   activateDistance: 3
+  deadMonster: {fileID: 8172326831104957749, guid: bf63c3be0efe77649bb20c61c5737f5c, type: 3}
