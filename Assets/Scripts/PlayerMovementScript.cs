@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -70,7 +71,7 @@ public class PlayerMovementScript : MonoBehaviour
         }else if (other.tag == "RollingRock"){
             Die();
         }else if (other.tag == "Respawn"){
-            Debug.Log("Ganas");
+            SceneManager.LoadScene(2);
         }
     }
 
