@@ -8,6 +8,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] Vector3 startPosition;
     [SerializeField] GameObject deadPlayer;
     [SerializeField] GameObject eyes;
+    [SerializeField] GameObject blackness;
     private bool canMove = true;
 
     void Update()
@@ -90,6 +91,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     public void InstanceDeath(){
         Vector3 position = transform.position;
+        Instantiate(blackness, position, Quaternion.identity);
         position.x += 5f;
         Instantiate(eyes, position, Quaternion.identity);
         position.x -= 10f;

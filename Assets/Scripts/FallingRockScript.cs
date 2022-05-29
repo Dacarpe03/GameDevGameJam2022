@@ -5,7 +5,7 @@ using UnityEngine;
 public class FallingRockScript : MonoBehaviour
 {
     private bool shake = false;
-    private float amount = 1.5f;
+    private float amount = 4f;
     private float nextTime;
     private float time = 0.05f;
     [SerializeField] float aliveTime = 1f;

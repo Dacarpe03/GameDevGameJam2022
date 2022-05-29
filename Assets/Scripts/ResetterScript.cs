@@ -9,5 +9,10 @@ public class ResetterScript : MonoBehaviour
         for (int i=0; i<monsters.Length; i++){
             monsters[i].GetComponent<MonsterScriot>().StopFollowing();
         }
+
+        GameObject blackness = GameObject.FindGameObjectWithTag("Finish");
+        if (blackness != null){
+            Destroy(blackness);
+        }
     }
 }
