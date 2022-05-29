@@ -56,8 +56,15 @@ public class PlayerMovementScript : MonoBehaviour
         if (other.tag == "FallingRock"){
             other.gameObject.GetComponent<FallingRockScript>().Activate();
         }else if (other.tag == "FallenRock"){
-            Destroy(this.gameObject);
+            Die();
+        }else if (other.tag == "Monster"){
+            Die();
+            other.gameObject.GetComponent<MonsterScriot>().StopFollowing();
         }
+    }
+
+    private void Die(){
+        Destroy(this.gameObject);
     }
 
 }
