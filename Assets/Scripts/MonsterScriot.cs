@@ -20,4 +20,14 @@ public class MonsterScriot : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, speed*Time.deltaTime);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "FallenRock"){
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void StopFollowing(){
+        this.follow = false;
+    }
 }
