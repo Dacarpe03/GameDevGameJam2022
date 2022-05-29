@@ -7,12 +7,15 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Vector3 startPosition;
     [SerializeField] GameObject deadPlayer;
+    private bool canMove = true;
 
     void Update()
     {
         int xDirection = CheckHztalDirection();
         int yDirection = CheckVtcalDirection();
-        MovePlayer();
+        if (canMove){
+            MovePlayer();
+        }
     }
 
     private void MovePlayer(){
@@ -73,6 +76,11 @@ public class PlayerMovementScript : MonoBehaviour
         this.gameObject.GetComponent<PlayerTimerScript>().RestartTime();
         rb.position = startPosition;
         FindObjectOfType<ResetterScript>().Reset();
+        canMove = true;
+    }
+
+    public void WaitForDeath(){
+        canMove = false;
     }
 
 }
