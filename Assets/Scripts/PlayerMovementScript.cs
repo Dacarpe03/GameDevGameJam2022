@@ -69,6 +69,8 @@ public class PlayerMovementScript : MonoBehaviour
             other.gameObject.GetComponent<MonsterScriot>().StopFollowing();
         }else if (other.tag == "RollingRock"){
             Die();
+        }else if (other.tag == "Respawn"){
+            Debug.Log("Ganas");
         }
     }
 
