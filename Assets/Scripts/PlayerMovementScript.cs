@@ -5,6 +5,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float speed = 1f;
     [SerializeField] private float boostMultiplier = 1.5f;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Vector3 startPosition;
 
     void Update()
     {
@@ -64,7 +65,7 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
     private void Die(){
-        Destroy(this.gameObject);
+        rb.position = startPosition;
     }
 
 }
