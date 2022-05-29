@@ -7,6 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Vector3 startPosition;
     [SerializeField] GameObject deadPlayer;
+    [SerializeField] GameObject eyes;
     private bool canMove = true;
 
     void Update()
@@ -83,7 +84,22 @@ public class PlayerMovementScript : MonoBehaviour
         canMove = false;
         rb.velocity = new Vector2(0f, 0f);
         FindObjectOfType<PlayerTimerScript>().WaitPls();
-        Invoke("Die", 3f);
+        InstanceDeath();
+        Invoke("Die", 2f);
+    }
+
+    public void InstanceDeath(){
+        Vector3 position = transform.position;
+        position.x += 5f;
+        Instantiate(eyes, position, Quaternion.identity);
+        position.x -= 10f;
+        Instantiate(eyes, position, Quaternion.identity);
+        position.x += 5f;
+
+        position.y -= 5f;
+        Instantiate(eyes, position, Quaternion.identity);
+        position.y += 10f;
+        Instantiate(eyes, position, Quaternion.identity);
     }
 
 }
