@@ -72,6 +72,7 @@ public class PlayerMovementScript : MonoBehaviour
         this.gameObject.GetComponent<SpriteController>().ChangeSprite();
         this.gameObject.GetComponent<PlayerTimerScript>().RestartTime();
         rb.position = startPosition;
+        FindObjectOfType<ResetterScript>().Reset();
     }
 
 }

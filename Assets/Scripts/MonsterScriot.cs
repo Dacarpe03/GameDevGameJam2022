@@ -48,7 +48,6 @@ public class MonsterScriot : MonoBehaviour
     }
 
     public void StopFollowing(){
-        Debug.Log("matao");
         stopFollowingCalled = true;
         nextTime = Time.time + wait;
         this.follow = false;

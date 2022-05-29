@@ -9,6 +9,7 @@ public class TimerScript : MonoBehaviour
     PlayerTimerScript playerTimerScript;
 
     void Awake(){
+        Screen.SetResolution(1920, 1080, true);
         playerTimerScript = FindObjectOfType<PlayerTimerScript>();
     }
 
