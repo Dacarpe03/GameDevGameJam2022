@@ -61,6 +61,8 @@ public class PlayerMovementScript : MonoBehaviour
         }else if (other.tag == "Monster"){
             Die();
             other.gameObject.GetComponent<MonsterScriot>().StopFollowing();
+        }else if (other.tag == "RollingRock"){
+            Die();
         }
     }
 
