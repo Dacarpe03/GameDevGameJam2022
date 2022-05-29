@@ -22,4 +22,9 @@ public class SpriteController : MonoBehaviour
             spriteRenderer.flipX = xFlipped;
         }
     }
+
+    public void ChangeSprite(){
+        int randomIndex = Random.Range(0, possibleSprites.Length);
+        spriteRenderer.sprite = possibleSprites[randomIndex];
+    }
 }

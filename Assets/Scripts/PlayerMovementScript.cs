@@ -6,12 +6,17 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float boostMultiplier = 1.5f;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Vector3 startPosition;
+    [SerializeField] GameObject deadPlayer;
+    [SerializeField] GameObject eyes;
+    private bool canMove = true;
 
     void Update()
     {
         int xDirection = CheckHztalDirection();
         int yDirection = CheckVtcalDirection();
-        MovePlayer();
+        if (canMove){
+            MovePlayer();
+        }
     }
 
     private void MovePlayer(){
@@ -66,8 +71,35 @@ public class PlayerMovementScript : MonoBehaviour
         }
     }
 
-    private void Die(){
+    public void Die(){
+        Instantiate(deadPlayer, this.transform.position, Quaternion.identity);
+        this.gameObject.GetComponent<SpriteController>().ChangeSprite();
+        this.gameObject.GetComponent<PlayerTimerScript>().RestartTime();
         rb.position = startPosition;
+        FindObjectOfType<ResetterScript>().Reset();
+        canMove = true;
+    }
+
+    public void WaitForDeath(){
+        canMove = false;
+        rb.velocity = new Vector2(0f, 0f);
+        FindObjectOfType<PlayerTimerScript>().WaitPls();
+        InstanceDeath();
+        Invoke("Die", 2f);
+    }
+
+    public void InstanceDeath(){
+        Vector3 position = transform.position;
+        position.x += 5f;
+        Instantiate(eyes, position, Quaternion.identity);
+        position.x -= 10f;
+        Instantiate(eyes, position, Quaternion.identity);
+        position.x += 5f;
+
+        position.y -= 5f;
+        Instantiate(eyes, position, Quaternion.identity);
+        position.y += 10f;
+        Instantiate(eyes, position, Quaternion.identity);
     }
 
 }
