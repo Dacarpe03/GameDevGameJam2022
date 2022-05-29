@@ -23,4 +23,9 @@ public class PlayerTimerScript : MonoBehaviour
     public void RestartTime(){
         endtime = Time.time + time;
     }
+
+    public float GetTimeLeft(){
+        float timeLeft = (endtime - Time.time)/time;
+        return timeLeft;
+    }
 }
