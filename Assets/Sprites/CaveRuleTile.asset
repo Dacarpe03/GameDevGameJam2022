@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CaveRuleTile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -751422431, guid: 60b0bd55a8a9973478ccd4dad24440b1, type: 3}
-  m_DefaultGameObject: {fileID: 7183787230542703110, guid: 3187985e6a1617c4ea13c13a0ea910f1, type: 3}
+  m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
   - m_Id: 0

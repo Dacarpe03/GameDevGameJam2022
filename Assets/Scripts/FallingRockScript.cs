@@ -37,7 +37,6 @@ public class FallingRockScript : MonoBehaviour
 
     private void AutoDestroy(){
         Vector3 spawnPosition = this.transform.position;
-        Debug.Log(spawnPosition);
         spawnPosition.x += xOffset;
         spawnPosition.y += yOffset;
         Instantiate(fallenRock, spawnPosition, Quaternion.identity);
