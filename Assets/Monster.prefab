@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7070046547953379675}
   - component: {fileID: 7070046547953379653}
   - component: {fileID: 7070046547953379674}
-  - component: {fileID: 7070046547953379652}
+  - component: {fileID: 1052220155579602657}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Monster
@@ -179,8 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab6c7ef9ea04b0498f25fa20569bcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!61 &7070046547953379652
+  speed: 3
+  activateDistance: 3
+--- !u!61 &1052220155579602657
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
