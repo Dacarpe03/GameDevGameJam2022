@@ -69,6 +69,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void Die(){
         Instantiate(deadPlayer, this.transform.position, Quaternion.identity);
+        this.gameObject.GetComponent<SpriteController>().ChangeSprite();
         rb.position = startPosition;
     }
 
