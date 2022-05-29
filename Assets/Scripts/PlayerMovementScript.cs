@@ -81,6 +81,9 @@ public class PlayerMovementScript : MonoBehaviour
 
     public void WaitForDeath(){
         canMove = false;
+        rb.velocity = new Vector2(0f, 0f);
+        FindObjectOfType<PlayerTimerScript>().WaitPls();
+        Invoke("Die", 3f);
     }
 
 }
