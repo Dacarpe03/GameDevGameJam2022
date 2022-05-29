@@ -7,6 +7,7 @@ public class MonsterScriot : MonoBehaviour
     private Transform playerPosition;
     [SerializeField] float speed = 4f;
     [SerializeField] float activateDistance = 3f;
+    [SerializeField] GameObject deadMonster;
     private Vector3 startPosition;
     private bool follow = false;
     private Rigidbody2D rb;
@@ -36,6 +37,13 @@ public class MonsterScriot : MonoBehaviour
             }
 
             stopFollowingCalled = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "RollingRock"){
+            Instantiate(deadMonster, this.gameObject.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
 
