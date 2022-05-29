@@ -6,6 +6,7 @@ public class PlayerMovementScript : MonoBehaviour
     [SerializeField] private float boostMultiplier = 1.5f;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Vector3 startPosition;
+    [SerializeField] GameObject deadPlayer;
 
     void Update()
     {
@@ -67,6 +68,7 @@ public class PlayerMovementScript : MonoBehaviour
     }
 
     private void Die(){
+        Instantiate(deadPlayer, this.transform.position, Quaternion.identity);
         rb.position = startPosition;
     }
 
