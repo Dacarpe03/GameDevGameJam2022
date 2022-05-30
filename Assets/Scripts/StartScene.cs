@@ -8,7 +8,7 @@ public class StartScene : MonoBehaviour
     private float nextScene;
 
     void Start(){
-        nextScene = Time.time + 20f;
+        nextScene = Time.time + 15f;
     }
 
     void Update(){

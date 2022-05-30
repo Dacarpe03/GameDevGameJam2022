@@ -10,7 +10,11 @@ public class GateScript : MonoBehaviour
             Instantiate(brokenGate, this.transform.position, Quaternion.identity);
             other.gameObject.GetComponent<RollingRockScript>().Reset();
             GetComponent<AudioSource>().Play();
-            Destroy(this.gameObject);
+            Invoke("Delete", 2f);
         }
+    }
+
+    private void Delete(){
+        Destroy(this.gameObject);
     }
 }
