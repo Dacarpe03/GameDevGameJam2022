@@ -8,6 +8,8 @@ public class GateScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "RollingRock"){
             Instantiate(brokenGate, this.transform.position, Quaternion.identity);
+            other.gameObject.GetComponent<RollingRockScript>().Reset();
+            GetComponent<AudioSource>().Play();
             Destroy(this.gameObject);
         }
     }
