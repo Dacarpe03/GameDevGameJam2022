@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerTimerScript : MonoBehaviour
 {
     [SerializeField] float time = 50f;
+    [SerializeField] AudioSource backgroundSource;
+    [SerializeField] AudioClip exploringAudio;
+    [SerializeField] AudioClip outOfLigthAudio;
+
     private float endtime;
     private bool wait = false;
     // Start is called before the first frame update
@@ -24,6 +28,8 @@ public class PlayerTimerScript : MonoBehaviour
     public void RestartTime(){
         endtime = Time.time + time;
         wait = false;
+        backgroundSource.Stop();
+        backgroundSource.PlayOneShot(exploringAudio);
     }
 
     public float GetTimeLeft(){
@@ -32,6 +38,8 @@ public class PlayerTimerScript : MonoBehaviour
     }
 
     public void WaitPls(){
+        backgroundSource.Stop();
+        backgroundSource.PlayOneShot(outOfLigthAudio);
         wait = true;
     }
 }

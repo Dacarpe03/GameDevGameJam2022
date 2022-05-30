@@ -29,10 +29,13 @@ public class FallingRockScript : MonoBehaviour
     }
 
     public void Activate(){
-        Debug.Log("Se cae");
-        shake = true;
-        nextTime = Time.time + time;
-        destroyTime = Time.time + aliveTime;
+        if (shake == false){
+            Debug.Log("Se cae");
+            shake = true;
+            nextTime = Time.time + time;
+            destroyTime = Time.time + aliveTime;
+            GetComponent<AudioSource>().Play();
+        }
     }
 
     private void AutoDestroy(){

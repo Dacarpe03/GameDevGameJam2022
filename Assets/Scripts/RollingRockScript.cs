@@ -11,6 +11,8 @@ public class RollingRockScript : MonoBehaviour
     private Vector3 startPosition;
     private float nextTime = 0f;
     private float wait = 0.5f;
+    private bool played = false;
+    private float offset = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,9 @@ public class RollingRockScript : MonoBehaviour
                 follow=true;
             }
             if (follow){
-                this.transform.Translate(new Vector3(0f, speed*Time.deltaTime, 0f));
+                offset = offset * -1f;
+                this.transform.Translate(new Vector3(offset, speed*Time.deltaTime, 0f));
+                StartSound();
             }
         }
         
@@ -38,5 +42,17 @@ public class RollingRockScript : MonoBehaviour
         nextTime = Time.time + wait;
         follow = false;
         this.transform.position = startPosition;
+        StoSound();
+    }
+
+    public void StartSound(){
+        if (!played){
+            GetComponent<AudioSource>().Play();    
+        }
+        played = true;
+    }
+
+    public void StoSound(){
+        GetComponent<AudioSource>().Stop(); 
     }
 }
