@@ -6,7 +6,7 @@ public class EyesScript : MonoBehaviour
 {
     private Transform playerTransform;
     private float endTime = 3f;
-    private float speed = 3f;
+    private float speed = 2f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -14,7 +14,7 @@ public class EyesScript : MonoBehaviour
     }
 
     void Start(){
-        endTime = Time.time + 3f;
+        endTime = Time.time + 2.5f;
     }
 
     // Update is called once per frame

@@ -89,7 +89,7 @@ public class PlayerMovementScript : MonoBehaviour
         rb.velocity = new Vector2(0f, 0f);
         FindObjectOfType<PlayerTimerScript>().WaitPls();
         InstanceDeath();
-        Invoke("Die", 2f);
+        Invoke("Die", 2.5f);
     }
 
     public void InstanceDeath(){
